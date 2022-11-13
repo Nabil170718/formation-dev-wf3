@@ -1,0 +1,72 @@
+L'architecture MVC, pour Model View Controller, est un modèle d'architecture très utilisé en développement web, notamment lors de l'utilisation de frameworks. Le code y est séparé en trois composants aux rôles distincts.
+
+Le modèle est responsable de la gestion des données et des opérations à effectuer.
+
+La vue a pour rôle de mettre en forme et de présenter ces données à l'utilisateur
+
+Le contrôleur traite les actions de l'utilisateur et va transformer celles-ci en instructions pour le modèle ainsi qu'en choix des vues à appliquer.
+
+ 
+
+Cette architecture qui fut à l'origine créée pour le développement logiciel s'est rendue populaire dans le milieu du web en raison des avantages qu'elle apporte :
+
+la séparation des rôles rend l'application plus facile à coder et à modifier
+une achitecture aussi modulaire permet un travail en groupe plus simple
+tester et débuguer le code est facilité
+Elle n'est cependant pas sans défauts :
+
+afin de comprendre le fonctionnement complet d'une application en MVC, les développeurs doivent connaître un plus grand nombre de technologies
+la grande décomposition du code peut rendre la navigation compliquée
+pour ces raisons, la courbe d'apprentissage s'en retrouve très prononcée
+
+
+Principe
+Dans l'architecture MVC, la couche Modèle regroupe :
+
+Des Data Mappers : la logique d'accès à la source des données (généralement une base de données, dans une application web)
+
+Des Domain Objects : Un conteneur d'information du domaine (du problème). Généralement, une entité logique du domaine. C'est ici qu'on peut stocker la logique de validation. Les objets de domaine n'ont aucun lien avec le mécanisme d'enregistrement ou la persistance des données.
+
+Par exemple, si on souhaite modéliser un taxi, on pourra créer :
+
+Une classe TaxiModel
+
+Une classe TaxiTable
+
+La classe TaxiModel permettra d'instancier des objets de type taxi, qui auront leurs propres propriétés (immatriculation, numéro de licence, puissance fiscale..) et leurs propres méthodes (démarrer moteur, démarrer compteur, recevoir paiement..). C'est ce qu'on appelle un objet de domaine.
+
+La classe TaxiTable permettra de communiquer avec la table Taxis de la base de données. On pourrait par exemple la programmer de manière à accepter des instances de TaxiModel afin de les sauvegarder en base de données, et de renvoyer des instances de cette même classe.
+
+Le Modèle est la partie du code qui connaît les informations. La Vue est la partie du code qui montre les informations que le modèle connaît.
+
+On peut faire un parallèle entre la vue et le modèle, d'un côté, et un code HTML et une feuille CSS, de l'autre. Le HTML contient les données, le CSS les affiche. Bien sûr, à la différence du HTML, le modèle ne peut pas être consulté simplement en ouvrant le fichier. Le navigateur, qui articule ces deux concepts différents, peut être comparé au Contrôleur.
+
+ 
+
+Data Mapper et Active Record
+Afin de communiquer avec la base de données, il existe deux patterns de conception populaires :
+
+Data Mapper : La logique d'accès en base de données est implémentée dans des objets séparés des objets de domaine.
+
+
+
+ 
+
+Exemple de création d'un taxi et de sauvegarde en base de données :
+
+$taxi = new TaxiModel();
+$taxi->engineStart();
+$taxiMapper = new TaxiMapper();
+$taxiMapper->insert($taxi);
+Active Record : La logique d'accès en base est placée dans l'objet de domaine, généralement l'objet de domaine hérite de ces fonctionnalités d'accès.
+
+
+
+Même exemple que pour le data mapper, création d'un taxi et sauvegarde en base de données :
+
+$taxi = new TaxiModel();
+$taxi->engineStart();
+$taxi->insert();
+Remarquez que les méthodes n'ont pas la même signature que pour le pattern data mapper.
+
+En général, dans un modèle MVC, on suit cette règle : Pour chaque table en base de données, il y a un data mapper, et pour chaque data mapper, un domain object.
