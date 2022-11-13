@@ -1,0 +1,246 @@
+Gérer l’alignement vertical des colonnes dans une ligne
+
+code : 
+
+<body>
+
+        <div class="container">
+
+            <!--La classe .mt permet de rajouter une marge externe supérieure-->
+
+            <div class="row mt-3">
+
+                <div class="col-md-3 bg-info">
+
+                    .col-12 par défaut / .col-3 pour les fenêtres >= 768px
+
+                </div>
+
+                <div class="col-md-6 bg-warning">
+
+                    .col-12 par défaut / .col-6 pour pour les fenêtres >= 768px
+
+                </div>
+
+                <div class="col-md-3 bg-success">
+
+                    .col-12 par défaut / .col-3 pour les fenêtres >= 768px
+
+                </div>
+
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col col-md-3 bg-info">
+
+                    .col (= .col-4 ici) par défaut / .col-3 à partir de 768px
+
+                </div>
+
+                <div class="col col-md-6 bg-warning">
+
+                    .col (= .col-4 ici) par défaut / .col-6 à partir de 768px
+
+                </div>
+
+                <div class="col col-md-3 bg-success">
+
+                    .col (= .col-4 ici) par défaut / .col-3 à partir de 768px
+
+                </div>
+
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col-md-3 col-lg-4 bg-info">
+
+                    .col-12 puis .col3 dès 768px puis .col4 dès 992px
+
+                </div>
+
+                <div class="col-md-6 col-lg-4 bg-warning">
+
+                    .col-12 puis .col6 dès 768px puis .col4 dès 992px
+
+                </div>
+
+                <div class="col-md-3 col-lg-4 bg-success">
+
+                    .col-12 puis .col3 dès 768px puis .col4 dès 992px
+
+                </div>
+
+            </div>
+
+        </div>
+
+</body>
+
+
+---Définir automatiquement la largeur des colonnes en fonction de leur contenu---
+
+code :
+
+<body>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col col-md bg-info">Elément n°1</div>
+
+                <div class="col-auto col-md bg-warning">Elément de ligne n°2</div>
+
+                <div class="col col-md bg-success">Elément n°3</div>
+
+            </div>
+
+        </div>
+
+</body>
+
+---Création d’une grille avec des colonnes de tailles différentes---
+
+Code :
+
+<body>
+
+        <div class="container">
+
+            <div class="row">
+
+                <!--Occupe 2 colonnes-->
+
+                <div class="col-2 bg-info">1er élément</div>
+
+                <!--Occupe 4 colonnes-->
+
+                <div class="col-4 bg-warning">2è élément</div>
+
+                <!--Occupe 6 colonnes-->
+
+                <div class="col-6 bg-success">3è élément</div>
+
+            </div>
+
+        </div>
+
+</body>
+
+
+<body>
+
+        <!--La classe border ajoute des bordures grises autour de l'élément-->
+
+        <div class="container border">
+
+            <div class="row">
+
+                <!--Occupe 6 colonnes-->
+
+                <div class="col-6 bg-info">1er élément</div>
+
+                <!--Occupe 4 colonnes-->
+
+                <div class="col-4 bg-warning">2è élément</div>
+
+                <!--Occupe 8 colonnes-->
+
+                <div class="col-8 bg-success">3è élément</div>
+
+            </div>
+
+           
+
+            <div class="row">
+
+                <!--Occupe 6 colonnes-->
+
+                <div class="col-6 bg-info">1er élément</div>
+
+                <!--Occupe 8 colonnes-->
+
+                <div class="col-8 bg-warning">2è élément</div>
+
+                <!--Occupe 4 colonnes-->
+
+                <div class="col-4 bg-success">3è élément</div>
+
+            </div>
+
+        </div>
+
+</body>
+
+
+---Création d’une grille avec des colonnes de même largeur--
+
+Code :
+
+<body>
+
+        <div class="container">
+
+            <div class="row">
+
+                <!--La classe bg-info ajoute un fond bleu à l'élément-->
+
+                <div class="col bg-info">1er élément</div>
+
+                <!--La classe bg-warning ajoute un fond jaune à l'élément-->
+
+                <div class="col bg-warning">2è élément</div>
+
+                <!--La classe bg-success ajoute un fond vert à l'élément-->
+
+                <div class="col bg-success">3è élément</div>
+
+            </div>
+
+        </div>
+
+</body>
+
+<body>
+
+        <div class="container">
+
+            <div class="row">
+
+                <!--La classe bg-info ajoute un fond bleu à l'élément-->
+
+                <div class="col bg-info">1er élément</div>
+
+                <!--La classe bg-warning ajoute un fond jaune à l'élément-->
+
+                <div class="col bg-warning">2è élément</div>
+
+                <!--La classe bg-success ajoute un fond vert à l'élément-->
+
+                <div class="col bg-success">3è élément</div>
+
+            </div>
+
+            <div class="row">
+
+                <!--La classe bg-danger ajoute un fond rouge à l'élément-->
+
+                <div class="col bg-danger">L'élément occupe toute la ligne</div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col bg-info">1er élément de la 3è ligne</div>
+
+                <div class="col bg-success">2è élément de la 3è ligne</div>
+
+            </div>
+
+        </div>
+
+</body>
+
+
