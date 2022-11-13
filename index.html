@@ -1,0 +1,94 @@
+Gérer l’alignement horizontal des colonnes dans une ligne
+
+code : 
+
+<style>
+
+            .custom-line{
+
+                min-height: 5rem;
+
+                margin-bottom: 1rem;
+
+                background-color: RGBa(60,240,160,0.7); /*Vert*/
+
+            }
+
+            .custom-line > .col-3, .custom-line > .col-4{
+
+                background-color: RGBa(60,120,240,0.7); /*Bleu*/
+
+            }
+
+</style>
+
+
+
+
+    <body>
+
+        <div class="container">
+
+            <div class="row justify-content-start custom-line">
+
+                <div class="col-4"><p>justify-content-start 1/2</p></div>
+
+                <div class="col-4"><p>justify-content-start 2/2</p></div>
+
+            </div>
+
+            <div class="row justify-content-center custom-line">
+
+                <div class="col-4"><p>justify-content-center 1/2</p></div>
+
+                <div class="col-4"><p>justify-content-center 2/2</p></div>
+
+            </div>
+
+            <div class="row justify-content-end custom-line">
+
+                <div class="col-4"><p>justify-content-end 1/2</p></div>
+
+                <div class="col-4"><p>justify-content-end 2/2</p></div>
+
+            </div>
+
+            <div class="row justify-content-around custom-line">
+
+                <div class="col-4"><p>justify-content-around 1/2</p></div>
+
+                <div class="col-4"><p>justify-content-around 2/2</p></div>
+
+            </div>
+
+            <div class="row justify-content-around custom-line">
+
+                <div class="col-3"><p>justify-content-around 1/3</p></div>
+
+                <div class="col-3"><p>justify-content-around 2/3</p></div>
+
+                <div class="col-3"><p>justify-content-around 3/3</p></div>
+
+            </div>
+
+            <div class="row justify-content-between custom-line">
+
+                <div class="col-4"><p>justify-content-between 1/2</p></div>
+
+                <div class="col-4"><p>justify-content-between 2/2</p></div>
+
+            </div>
+
+            <div class="row justify-content-between custom-line">
+
+                <div class="col-3"><p>justify-content-between 1/3</p></div>
+
+                <div class="col-3"><p>justify-content-between 2/3</p></div>
+
+                <div class="col-3"><p>justify-content-between 3/3</p></div>
+
+            </div>
+
+       </div>
+
+</body>
